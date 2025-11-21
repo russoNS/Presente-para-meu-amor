@@ -1,0 +1,132 @@
+/* Configuração Básica */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    background-color: #f0f0f0; 
+}
+
+/* Estilo para o Fundo 'Eu Te Amo Minha Princesa' */
+.fundo-teamo {
+    /* Essa propriedade cria o efeito de fundo repetido */
+    background-image: repeating-linear-gradient(
+        45deg, 
+        #ffe6e6, 
+        #ffe6e6 10px, 
+        #fff0f0 10px, 
+        #fff0f0 20px
+    );
+    background-color: #fff0f0; /* Cor de fundo de segurança */
+    color: #444;
+}
+
+.fundo-teamo::before {
+    /* Adiciona o texto 'eu te amo' no fundo */
+    content: "EU TE AMO MINHA PRINCESA EU TE AMO MINHA PRINCESA EU TE AMO MINHA PRINCESA ";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Manda o texto para trás do conteúdo */
+    opacity: 0.1; /* Deixa o texto bem transparente */
+    font-size: 3em;
+    line-height: 1.5;
+    word-break: break-all;
+    overflow: hidden;
+    pointer-events: none; /* Garante que você possa clicar no conteúdo */
+}
+
+
+/* Conteúdo Principal (Centralizado) */
+.container-inicio, .container-fotos, .container-mensagem, .container-bonus {
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 500px;
+}
+
+/* Estilo do Título na Página Inicial */
+.container-inicio h1 {
+    font-size: 3em;
+    color: #ff69b4; /* Cor de rosa choque para o coração */
+    margin-bottom: 30px;
+}
+
+/* Estilo Comum para o Botão "Continuar" */
+.botao {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #ff69b4; /* Rosa choque */
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 8px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.botao:hover {
+    background-color: #ff4d94; /* Rosa mais escuro ao passar o mouse */
+}
+
+/* Estilo da Galeria de Fotos */
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Quebra as fotos para a linha de baixo se necessário */
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.galeria img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px;
+    border: 3px solid #ff69b4;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo da Mensagem (Página 3) */
+.container-mensagem h2 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.container-mensagem p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+    white-space: pre-wrap; /* Preserva quebras de linha/espaços se você editar o texto no HTML */
+}
+
+/* Estilo da Página de Bônus (Página 4) */
+.texto-clicavel {
+    font-size: 1.5em;
+    color: #4682b4; /* Azul */
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.texto-clicavel:hover {
+    color: #2b577a;
+}
+
+/* Estilo para as fotos da página 4 (para o JavaScript funcionar melhor) */
+.galeria#galeria-bonus .foto-item {
+    cursor: pointer;
+}
