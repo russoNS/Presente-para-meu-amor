@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bônus!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-bonus">
+        <a href="#" id="clique-aqui" class="texto-clicavel">CLIQUE AQUI!</a> 
+        <div class="galeria" id="galeria-bonus">
+            <img src="FOTO_3.jpg" alt="Nossa foto 3" class="foto-item"> 
+            <img src="FOTO_4.jpg" alt="Nossa foto 4" class="foto-item">
+            <img src="FOTO_5.jpg" alt="Nossa foto 5" class="foto-item">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('clique-aqui').addEventListener('click', function(e) {
+            e.preventDefault(); // Impede o link de ir para o topo da página
+            const galeria = document.getElementById('galeria-bonus');
+            const fotos = Array.from(galeria.children);
+            
+            // Lógica para embaralhar os elementos (fotos)
+            for (let i = fotos.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                galeria.insertBefore(fotos[i], fotos[j]); // Move o elemento
+            }
+        });
+    </script>
+</body>
+</html>
